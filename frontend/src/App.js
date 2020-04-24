@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {createMuiTheme, makeStyles, ThemeProvider} from '@material-ui/core/styles';
 import {orange} from '@material-ui/core/colors';
 import LinearProgress from "@material-ui/core/LinearProgress";
+
+import socket from 'socket.io-client';
 
 // import CustomCheckbox from "./components/checkbox";
 // import CameraStream from "./components/CameraStream";
@@ -38,9 +40,18 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const websocket = socket();
 
 function App() {
   const classes = useStyles();
+
+  const [connect, setConnect] = useState(true);
+
+  useEffect(() => {
+    websocket.on('connected', () => {
+      setConnect(true)
+    });
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
