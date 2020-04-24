@@ -8,7 +8,10 @@ import socket from 'socket.io-client';
 
 // import CustomCheckbox from "./components/checkbox";
 // import CameraStream from "./components/CameraStream";
-// import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
+import Camera from "./components/camera/Camera";
+import Nav from "./components/nav/Nav";
+import CanvasMask from "./components/canvas/Canvas";
 
 const theme = createMuiTheme({
   status: {
@@ -46,6 +49,7 @@ function App() {
   const classes = useStyles();
 
   const [connect, setConnect] = useState(true);
+  const [view, setView] = useState(false);
 
   useEffect(() => {
     websocket.on('connected', () => {
@@ -57,8 +61,17 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.main}>
         <LinearProgress/>
-        <h1>Foqs</h1>
+        <Dashboard/>
+        <section className={classes.main}>
+          <section className={classes.teacher}>
+            <Camera ws={websocket}/>
+          </section>
+        </section>
       </div>
+      <CanvasMask></CanvasMask>
+      <section className={classes.bar}>
+        <Nav toggle={setView}/>
+      </section>
     </ThemeProvider>
   );
 }
