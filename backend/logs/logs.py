@@ -32,10 +32,11 @@ def log_constructor():
         },
     }
 
-    result =(json.dumps(log, indent=4))
+    result = (json.dumps(log, indent=4))
+    with open("log.txt", "a") as log_file:
+        log_file.write(result)
+        log_file.write("\n")
 
     return result
 
 
-if __name__ == "__main__":
-    print(log_constructor())
