@@ -36,7 +36,10 @@ def track_eye(eyes, image):
         roi = image[eye_y1:eye_y2, eye_x1:eye_x2]
 
         if eye_width / eye_height > 0.3:
-            gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+            try:
+                gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+            except cv2.error:
+                return 0
             blur = cv2.medianBlur(gray, 3)
             equ = cv2.equalizeHist(blur)
             thres = cv2.inRange(equ, 0, 15)
