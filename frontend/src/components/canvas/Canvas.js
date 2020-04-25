@@ -5,14 +5,57 @@ const HOOK_PATH = new Path2D(HOOK_SVG)
 const SCALE = 0.3
 const OFFSET = 80
 
+var vertices=[];
+vertices.push({x:0,y:0});
+vertices.push({x:300,y:100});
+vertices.push({x:80,y:200});
+vertices.push({x:10,y:100});
+vertices.push({x:0,y:0});
+
+// calc waypoints traveling along vertices
+function calcWaypoints(vertices){
+  var waypoints=[];
+  for(var i=1;i<vertices.length;i++){
+    var pt0=vertices[i-1];
+    var pt1=vertices[i];
+    var dx=pt1.x-pt0.x;
+    var dy=pt1.y-pt0.y;
+    for(var j=0;j<100;j++){
+      var x=pt0.x+dx*j/100;
+      var y=pt0.y+dy*j/100;
+      waypoints.push({x:x,y:y});
+    }
+  }
+  return(waypoints);
+}
+
+
 function draw(ctx, location) {
   ctx.fillStyle = 'deepskyblue'
   ctx.shadowColor = 'dodgerblue'
-  ctx.shadowBlur = 20
+  // ctx.shadowBlur = 20
+  ctx.fillRect(10,10,100,100);
+  var circle = new Path2D();
+  circle.moveTo(125, 35);
+  circle.arc(200, 35, 25, 0, 2 * Math.PI);
+  ctx.fill(circle);
+  var startX = 50;
+  var startY = 50;
+  var endX = 100;
+  var endY = 100;
+  var amount = 0;
+  setInterval(function() {
+    amount += 0.05;
+    ctx.clearRect(0, 0, 500, 500);
+    ctx.strokeStyle = "red";
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(startX + (endX - startX) * amount, startY + (endY - startY) * amount + -100 *amount);
+    ctx.stroke();
+  }, 30);
   ctx.save()
   ctx.scale(SCALE, SCALE)
   ctx.translate(location.x / SCALE - OFFSET, location.y / SCALE - OFFSET)
-  ctx.fill(HOOK_PATH)
+  // ctx.fill(HOOK_PATH)
   ctx.restore()
 }
 
