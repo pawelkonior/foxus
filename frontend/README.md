@@ -1,1 +1,1 @@
-# Frontend of Foqs
+# Frontend of Foxus
