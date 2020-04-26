@@ -25,9 +25,9 @@ def chart_data_connect():
     global thread
     print('Client connected')
     emit('connected')
-    if not thread.is_alive():
-        print("Starting Thread")
-        thread = socketio.start_background_task(data_generator)
+    # if not thread.is_alive():
+    #     print("Starting Thread")
+    #     thread = socketio.start_background_task(data_generator)
 
 
 def data_generator():
@@ -40,6 +40,7 @@ def data_generator():
 
 @socketio.on('stream')
 def handle_stream(message):
-    new_frame = render_face(message['id'], message['stream'])
-    emit('stream processed', new_frame)
-    socketio.sleep(1)
+    new_frame = render_face(1, message['stream'])
+    # emit('stream processed', {"stream": message['stream'], "points": new_frame})
+    emit('stream processed', message['stream'])
+    # socketio.sleep(1)

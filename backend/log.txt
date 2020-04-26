@@ -1,0 +1,1080 @@
+{
+    "metrics_took_at": 1587921670.3999732,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 5.9,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                30.4,
+                1.0,
+                23.0,
+                1.0,
+                15.8,
+                1.0,
+                12.9,
+                1.0,
+                10.1,
+                0.0,
+                7.0,
+                0.0,
+                5.0,
+                0.0,
+                5.9,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240005.95,
+                "nice": 0.0,
+                "system": 107513.61,
+                "idle": 5039595.69
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12824264704,
+            "percent": 62.7,
+            "used": 16908705792,
+            "free": 442531840,
+            "active": 12364128256,
+            "inactive": 11706925056,
+            "wired": 4544577536
+        },
+        "network": {
+            "bytes_sent": 61104342016,
+            "bytes_recv": 947856891904,
+            "packets_sent": 503297429,
+            "packets_recv": 672471961,
+            "errin": 0,
+            "errout": 102949,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587921674.342701,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 6.5,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                30.7,
+                0.0,
+                21.0,
+                0.0,
+                17.0,
+                0.0,
+                13.0,
+                1.0,
+                11.8,
+                0.0,
+                7.9,
+                0.0,
+                5.9,
+                0.0,
+                3.0,
+                1.0
+            ],
+            "cpu_times": {
+                "user": 240010.89,
+                "nice": 0.0,
+                "system": 107515.2,
+                "idle": 5039652.24
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12727619584,
+            "percent": 63.0,
+            "used": 17006211072,
+            "free": 270499840,
+            "active": 12481544192,
+            "inactive": 11781365760,
+            "wired": 4524666880
+        },
+        "network": {
+            "bytes_sent": 61104350208,
+            "bytes_recv": 947856899072,
+            "packets_sent": 503297485,
+            "packets_recv": 672472017,
+            "errin": 0,
+            "errout": 102949,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587921808.146844,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 7.1,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                33.0,
+                2.0,
+                25.0,
+                1.0,
+                19.0,
+                0.0,
+                16.8,
+                0.0,
+                14.9,
+                0.0,
+                7.1,
+                0.0,
+                7.0,
+                0.0,
+                3.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240213.76,
+                "nice": 0.0,
+                "system": 107575.85,
+                "idle": 5041529.54
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12623581184,
+            "percent": 63.3,
+            "used": 17111244800,
+            "free": 48123904,
+            "active": 12589133824,
+            "inactive": 12155236352,
+            "wired": 4522110976
+        },
+        "network": {
+            "bytes_sent": 61131597824,
+            "bytes_recv": 947894126592,
+            "packets_sent": 503312666,
+            "packets_recv": 672491199,
+            "errin": 0,
+            "errout": 102950,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587921812.116798,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 7.2,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                30.0,
+                1.0,
+                22.5,
+                0.0,
+                15.8,
+                0.0,
+                12.0,
+                0.0,
+                10.0,
+                0.0,
+                8.0,
+                0.0,
+                5.9,
+                0.0,
+                4.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240219.33,
+                "nice": 0.0,
+                "system": 107577.65,
+                "idle": 5041585.75
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12614377472,
+            "percent": 63.3,
+            "used": 17121533952,
+            "free": 23203840,
+            "active": 12601311232,
+            "inactive": 12313579520,
+            "wired": 4520222720
+        },
+        "network": {
+            "bytes_sent": 61131614208,
+            "bytes_recv": 947894417408,
+            "packets_sent": 503312746,
+            "packets_recv": 672491460,
+            "errin": 0,
+            "errout": 102950,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587921924.244211,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 8.9,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                32.0,
+                0.0,
+                21.2,
+                0.0,
+                17.0,
+                1.0,
+                13.0,
+                0.0,
+                11.0,
+                0.0,
+                7.9,
+                0.0,
+                5.0,
+                0.0,
+                4.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240374.77,
+                "nice": 0.0,
+                "system": 107627.29,
+                "idle": 5043174.62
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12625735680,
+            "percent": 63.3,
+            "used": 17137016832,
+            "free": 14884864,
+            "active": 12618100736,
+            "inactive": 12369592320,
+            "wired": 4518916096
+        },
+        "network": {
+            "bytes_sent": 61142820864,
+            "bytes_recv": 947913749504,
+            "packets_sent": 503320105,
+            "packets_recv": 672502751,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587921928.203718,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 6.9,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                31.3,
+                1.0,
+                21.0,
+                0.0,
+                16.8,
+                1.0,
+                11.9,
+                0.0,
+                10.0,
+                0.0,
+                7.0,
+                0.0,
+                5.0,
+                0.0,
+                4.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240379.95,
+                "nice": 0.0,
+                "system": 107629.07,
+                "idle": 5043231.04
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12623122432,
+            "percent": 63.3,
+            "used": 17138745344,
+            "free": 15749120,
+            "active": 12612968448,
+            "inactive": 12436197376,
+            "wired": 4525776896
+        },
+        "network": {
+            "bytes_sent": 61142844416,
+            "bytes_recv": 947914047488,
+            "packets_sent": 503320217,
+            "packets_recv": 672503041,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922090.897126,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 6.1,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                28.0,
+                0.0,
+                20.0,
+                0.0,
+                13.1,
+                0.0,
+                10.9,
+                0.0,
+                7.9,
+                0.0,
+                5.0,
+                0.0,
+                3.0,
+                0.0,
+                2.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240520.8,
+                "nice": 0.0,
+                "system": 107692.1,
+                "idle": 5045630.23
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12541886464,
+            "percent": 63.5,
+            "used": 17035943936,
+            "free": 17072128,
+            "active": 12532011008,
+            "inactive": 12283584512,
+            "wired": 4503932928
+        },
+        "network": {
+            "bytes_sent": 61235307520,
+            "bytes_recv": 948018121728,
+            "packets_sent": 503337839,
+            "packets_recv": 672525621,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922094.864508,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 6.8,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                29.0,
+                0.0,
+                21.8,
+                0.0,
+                14.0,
+                0.0,
+                11.0,
+                0.0,
+                8.0,
+                0.0,
+                6.0,
+                0.0,
+                4.9,
+                0.0,
+                3.0,
+                1.0
+            ],
+            "cpu_times": {
+                "user": 240525.59,
+                "nice": 0.0,
+                "system": 107693.67,
+                "idle": 5045687.31
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12544675840,
+            "percent": 63.5,
+            "used": 17029500928,
+            "free": 28463104,
+            "active": 12524818432,
+            "inactive": 12338913280,
+            "wired": 4504682496
+        },
+        "network": {
+            "bytes_sent": 61235322880,
+            "bytes_recv": 948018358272,
+            "packets_sent": 503337936,
+            "packets_recv": 672525860,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922134.335208,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 5.6,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                27.7,
+                1.0,
+                20.2,
+                0.0,
+                13.9,
+                0.0,
+                11.8,
+                0.0,
+                7.1,
+                0.0,
+                6.0,
+                0.0,
+                4.0,
+                0.0,
+                2.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240564.07,
+                "nice": 0.0,
+                "system": 107709.03,
+                "idle": 5046264.98
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 13047578624,
+            "percent": 62.0,
+            "used": 16908611584,
+            "free": 579203072,
+            "active": 12400566272,
+            "inactive": 12193562624,
+            "wired": 4508045312
+        },
+        "network": {
+            "bytes_sent": 61291302912,
+            "bytes_recv": 948077017088,
+            "packets_sent": 503345268,
+            "packets_recv": 672534778,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922138.212157,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 5.4,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                25.3,
+                0.0,
+                18.8,
+                1.0,
+                14.0,
+                0.0,
+                10.9,
+                0.0,
+                6.9,
+                0.0,
+                6.0,
+                0.0,
+                4.0,
+                0.0,
+                3.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240568.48,
+                "nice": 0.0,
+                "system": 107710.44,
+                "idle": 5046321.19
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12924272640,
+            "percent": 62.4,
+            "used": 17031569408,
+            "free": 409624576,
+            "active": 12521832448,
+            "inactive": 12239790080,
+            "wired": 4509736960
+        },
+        "network": {
+            "bytes_sent": 61291309056,
+            "bytes_recv": 948077024256,
+            "packets_sent": 503345312,
+            "packets_recv": 672534823,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922232.3904,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 7.2,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                34.0,
+                0.0,
+                23.8,
+                1.0,
+                18.6,
+                0.0,
+                15.8,
+                0.0,
+                11.0,
+                0.0,
+                6.0,
+                0.0,
+                5.0,
+                0.0,
+                4.0,
+                1.0
+            ],
+            "cpu_times": {
+                "user": 240640.13,
+                "nice": 0.0,
+                "system": 107742.88,
+                "idle": 5047723.91
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12948922368,
+            "percent": 62.3,
+            "used": 17009754112,
+            "free": 450650112,
+            "active": 12505358336,
+            "inactive": 12232953856,
+            "wired": 4504395776
+        },
+        "network": {
+            "bytes_sent": 61293022208,
+            "bytes_recv": 948085248000,
+            "packets_sent": 503349424,
+            "packets_recv": 672541903,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922236.30787,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 7.4,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                34.7,
+                1.0,
+                25.0,
+                0.0,
+                18.8,
+                1.0,
+                15.8,
+                1.0,
+                14.9,
+                0.0,
+                10.9,
+                0.0,
+                9.9,
+                0.0,
+                9.9,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240645.23,
+                "nice": 0.0,
+                "system": 107744.93,
+                "idle": 5047779.44
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12804972544,
+            "percent": 62.7,
+            "used": 17154363392,
+            "free": 189296640,
+            "active": 12639133696,
+            "inactive": 12331929600,
+            "wired": 4515229696
+        },
+        "network": {
+            "bytes_sent": 61293044736,
+            "bytes_recv": 948086083584,
+            "packets_sent": 503349556,
+            "packets_recv": 672542557,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922306.72227,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 14.0,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                41.6,
+                1.0,
+                32.7,
+                1.0,
+                30.0,
+                0.0,
+                24.0,
+                0.0,
+                20.0,
+                1.0,
+                12.9,
+                0.0,
+                10.0,
+                0.0,
+                7.9,
+                1.0
+            ],
+            "cpu_times": {
+                "user": 240715.48,
+                "nice": 0.0,
+                "system": 107769.88,
+                "idle": 5048810.85
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12849811456,
+            "percent": 62.6,
+            "used": 17111535616,
+            "free": 273522688,
+            "active": 12586426368,
+            "inactive": 12281237504,
+            "wired": 4525109248
+        },
+        "network": {
+            "bytes_sent": 61295845376,
+            "bytes_recv": 948093487104,
+            "packets_sent": 503352845,
+            "packets_recv": 672547963,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922310.769459,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 8.2,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                30.0,
+                1.0,
+                20.0,
+                0.0,
+                16.8,
+                0.0,
+                11.9,
+                0.0,
+                10.0,
+                0.0,
+                7.0,
+                0.0,
+                5.0,
+                0.0,
+                4.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 240722.43,
+                "nice": 0.0,
+                "system": 107772.18,
+                "idle": 5048866.38
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12776886272,
+            "percent": 62.8,
+            "used": 17183379456,
+            "free": 117850112,
+            "active": 12668030976,
+            "inactive": 12363878400,
+            "wired": 4515348480
+        },
+        "network": {
+            "bytes_sent": 61295865856,
+            "bytes_recv": 948093502464,
+            "packets_sent": 503352946,
+            "packets_recv": 672548061,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922637.508296,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 7.8,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                36.6,
+                2.0,
+                25.0,
+                0.0,
+                20.8,
+                1.0,
+                17.0,
+                1.0,
+                14.0,
+                2.0,
+                10.1,
+                1.0,
+                7.9,
+                0.0,
+                5.9,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 241069.93,
+                "nice": 0.0,
+                "system": 107911.25,
+                "idle": 5053607.53
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12730617856,
+            "percent": 62.9,
+            "used": 17190797312,
+            "free": 29667328,
+            "active": 12702990336,
+            "inactive": 12455292928,
+            "wired": 4487806976
+        },
+        "network": {
+            "bytes_sent": 61312679936,
+            "bytes_recv": 948107120640,
+            "packets_sent": 503393630,
+            "packets_recv": 672566004,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922641.729297,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 8.5,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                33.0,
+                1.0,
+                23.8,
+                0.0,
+                18.0,
+                1.0,
+                15.8,
+                1.0,
+                11.0,
+                0.0,
+                8.0,
+                1.0,
+                7.9,
+                0.0,
+                5.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 241078.47,
+                "nice": 0.0,
+                "system": 107913.68,
+                "idle": 5053664.06
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 12703850496,
+            "percent": 63.0,
+            "used": 17162690560,
+            "free": 33193984,
+            "active": 12673495040,
+            "inactive": 12502163456,
+            "wired": 4489195520
+        },
+        "network": {
+            "bytes_sent": 61312859136,
+            "bytes_recv": 948107166720,
+            "packets_sent": 503393986,
+            "packets_recv": 672566316,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922705.1613529,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 8.9,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                34.7,
+                1.0,
+                26.5,
+                0.0,
+                20.0,
+                1.0,
+                15.8,
+                0.0,
+                14.0,
+                1.0,
+                7.9,
+                0.0,
+                7.9,
+                0.0,
+                4.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 241196.4,
+                "nice": 0.0,
+                "system": 107956.13,
+                "idle": 5054518.58
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 13940719616,
+            "percent": 59.4,
+            "used": 15718797312,
+            "free": 2671562752,
+            "active": 11232325632,
+            "inactive": 10899132416,
+            "wired": 4486471680
+        },
+        "network": {
+            "bytes_sent": 61341159424,
+            "bytes_recv": 948129935360,
+            "packets_sent": 503412086,
+            "packets_recv": 672575370,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922709.234855,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 8.6,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                34.7,
+                1.0,
+                24.8,
+                1.0,
+                19.8,
+                1.0,
+                15.0,
+                2.0,
+                14.0,
+                0.0,
+                9.8,
+                1.0,
+                8.8,
+                0.0,
+                6.9,
+                1.0
+            ],
+            "cpu_times": {
+                "user": 241202.71,
+                "nice": 0.0,
+                "system": 107958.27,
+                "idle": 5054575.28
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 13820841984,
+            "percent": 59.8,
+            "used": 15839682560,
+            "free": 2481471488,
+            "active": 11342065664,
+            "inactive": 10984525824,
+            "wired": 4497616896
+        },
+        "network": {
+            "bytes_sent": 61341333504,
+            "bytes_recv": 948129984512,
+            "packets_sent": 503412436,
+            "packets_recv": 672575691,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922754.385217,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 7.9,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                33.7,
+                1.0,
+                26.0,
+                0.0,
+                19.0,
+                2.0,
+                15.8,
+                0.0,
+                12.1,
+                0.0,
+                11.9,
+                0.0,
+                10.0,
+                0.0,
+                8.0,
+                1.0
+            ],
+            "cpu_times": {
+                "user": 241260.1,
+                "nice": 0.0,
+                "system": 107981.47,
+                "idle": 5055217.13
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 13831094272,
+            "percent": 59.7,
+            "used": 15947055104,
+            "free": 2379722752,
+            "active": 11453317120,
+            "inactive": 11109462016,
+            "wired": 4493737984
+        },
+        "network": {
+            "bytes_sent": 61373277184,
+            "bytes_recv": 948158507008,
+            "packets_sent": 503427559,
+            "packets_recv": 672583616,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}
+{
+    "metrics_took_at": 1587922758.427775,
+    "metrics": {
+        "cpu": {
+            "cpu_usage_percentage": 7.3,
+            "cpu_number_logical": 16,
+            "cpu_number_physical": 8,
+            "cpu_per_cpu_percentage": [
+                29.3,
+                1.0,
+                23.0,
+                2.0,
+                18.2,
+                0.0,
+                13.1,
+                2.0,
+                10.0,
+                0.0,
+                7.0,
+                0.0,
+                5.9,
+                0.0,
+                4.0,
+                0.0
+            ],
+            "cpu_times": {
+                "user": 241266.18,
+                "nice": 0.0,
+                "system": 107983.49,
+                "idle": 5055273.72
+            }
+        },
+        "memory": {
+            "total": 34359738368,
+            "available": 13741424640,
+            "percent": 60.0,
+            "used": 16035553280,
+            "free": 2199150592,
+            "active": 11544817664,
+            "inactive": 11200364544,
+            "wired": 4490735616
+        },
+        "network": {
+            "bytes_sent": 61373484032,
+            "bytes_recv": 948158564352,
+            "packets_sent": 503428325,
+            "packets_recv": 672584028,
+            "errin": 0,
+            "errout": 102951,
+            "dropin": 0,
+            "dropout": 0
+        }
+    }
+}

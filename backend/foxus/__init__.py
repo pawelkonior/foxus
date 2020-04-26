@@ -4,7 +4,7 @@ from flask import Flask
 from flask_socketio import SocketIO
 from engineio.payload import Payload
 
-Payload.max_decode_packets = 50
+Payload.max_decode_packets = 500
 
 
 db = SQLAlchemy()
