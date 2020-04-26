@@ -2,6 +2,9 @@ import os
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 from flask_socketio import SocketIO
+from engineio.payload import Payload
+
+Payload.max_decode_packets = 50
 
 
 db = SQLAlchemy()
@@ -38,6 +41,7 @@ def create_app(test_config=None):
     return foxus
 
 
-app = create_app()
-# app.app_context().push()
+temp_app = create_app()
+app = temp_app
+app.app_context().push()
 

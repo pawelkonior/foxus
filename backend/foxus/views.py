@@ -40,5 +40,6 @@ def data_generator():
 
 @socketio.on('stream')
 def handle_stream(message):
-    idx, new_frame = render_face(message['id'], message['stream'])
-    emit('stream processed', new_frame)
+    new_frame = render_face(message['id'], message['stream'])
+    print(new_frame)
+    emit('stream processed', "")
