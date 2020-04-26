@@ -36,7 +36,8 @@ def json_face(landmarks):
     response = {}
     for (i, name) in enumerate(FACIAL_LANDMARKS_68_IDXS.keys()):
         (j, k) = FACIAL_LANDMARKS_68_IDXS[name]
-        response[name] = landmarks[j:k]
+        a = landmarks[j:k]
+        response[name] = a.tolist()
     return response
 
 
