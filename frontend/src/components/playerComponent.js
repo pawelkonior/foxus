@@ -50,9 +50,9 @@ const PlayerComponent = ({idx, status, ws}) => {
 
   return (
     <div style={{
-      width: "320px",
+      width: "640px",
       // maxWidth: "40%",
-      height: "240px",
+      height: "480px",
       // maxHeight: "200px",
       boxSizing: "border-box",
       boxShadow: "0px 0px 5px 3px" + colors[color],

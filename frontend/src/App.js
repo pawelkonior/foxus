@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const data = [1, 2, 3, 4];
+const data = [1];
 
 const socket2 = socket();
 
@@ -77,7 +77,7 @@ function App() {
     <div className={classes.root}>
       <div style={{position: "absolute"}}>
         <img src={logo} alt="" style={{
-          width: "50px",
+          width: "145px",
           height: "auto",
           margin: "10px",
           borderRadius: "4px",
@@ -97,7 +97,7 @@ function App() {
         </section>
 
         <section className={classes.panel}>
-          <ConcentrationChartComponent ws={socket2}/>
+          {/*<ConcentrationChartComponent ws={socket2}/>*/}
           <WebcamComponent ws={socket2}/>
         </section>
       </section>
@@ -107,7 +107,7 @@ function App() {
       <section className={classes.main}>
         <section className={classes.teacher}>
           <WebcamComponent ws={socket2}/>
-          <ConcentrationChartComponent ws={socket2}/>
+          {/*<ConcentrationChartComponent ws={socket2}/>*/}
         </section>
       </section>
 
