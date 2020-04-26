@@ -1,4 +1,8 @@
-![Foxus](https://drive.google.com/uc?export=view&id=1rj4pr55X4-HSYQAvkeWQSB2RfJOmd6rI)
+<p align="center">
+  <a href="https://github.com/pawelkonior/foxus">
+    <img src="images/image.png" alt="Logo" width="800" height="300">
+  </a>
+</p>
 ## Inspiration
 E-learning granted European and non-European students access to unprecedented learning opportunities. The global COVID-19 pandemic, however, turned e-learning from an opportunity to an urgent necessity. Advanced e-learning tools are therefore in high demand and are likely to remain so.
  
