@@ -20,4 +20,7 @@ RUN pip install -r requirements.txt
 # copy project
 COPY . /usr/src/app/
 
+
 EXPOSE 3008/tcp
+
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
