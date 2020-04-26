@@ -1,4 +1,4 @@
-![Foxus](https://drive.google.com/drive/folders/1JOJ-FzPczd0Boh8tgL5c-vcxvFEQWYOY)
+![Foxus](https://drive.google.com/file/d/1ZEp-e2peypH5iWHXLyzR5EgXBrXeDaW5/view?usp=sharing)
 ## Inspiration
 E-learning granted European and non-European students access to unprecedented learning opportunities. The global COVID-19 pandemic, however, turned e-learning from an opportunity to an urgent necessity. Advanced e-learning tools are therefore in high demand and are likely to remain so.
  
