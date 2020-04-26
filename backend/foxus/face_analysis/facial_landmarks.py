@@ -92,7 +92,7 @@ def detect_face(user, image):
                 response_dict["back_video"] = 1
                 continue
 
-    rects = detector(gray, 1)
+    rects = detector(gray, 0)
 
     if len(rects) > 1:
         response_dict["back_video"] = 2
