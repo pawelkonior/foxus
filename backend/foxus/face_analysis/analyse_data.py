@@ -2,14 +2,19 @@ from foxus.database import UserModel, DataModel
 from foxus import db
 
 
+FRAME_LEVELS = {1: 1, 2: 1, 3: 4, 4: 3, 5: 3, 6: 2}
+SMILE_LEVELS = {0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 2, 6: 3, 7: 3}
+FOCUS_LEVELS = {0: -4, 1: -3, 2: -2, 3: -1, 4: -0.5, 5: 1, 6: 2, 7: 3, 8: 4}
+
+
 def calculate_mean(user_id):
     data = DataModel.query.filter_by(user_id=user_id).all()
 
-    mean_eyebrow = [n.__dict__["mean_eyebrow"] for n in data if n.__dict__["mean_eyebrow"] is not None]
-    mean_high_width = [n.__dict__["mean_high_width"] for n in data if n.__dict__["mean_high_width"] is not None]
-    mean_d = [n.__dict__["mean_d"] for n in data if n.__dict__["mean_d"] is not None]
-    mean_a1 = [n.__dict__["mean_a1"] for n in data if n.__dict__["mean_a1"] is not None]
-    mean_a2 = [n.__dict__["mean_a2"] for n in data if n.__dict__["mean_a2"] is not None]
+    mean_eyebrow = [n.__dict__["eyebrow"] for n in data]
+    mean_high_width = [n.__dict__["high_width"] for n in data]
+    mean_d = [n.__dict__["d"] for n in data]
+    mean_a1 = [n.__dict__["a1"] for n in data]
+    mean_a2 = [n.__dict__["a2"] for n in data]
 
     mean_eyebrow = sum(mean_eyebrow) / len(mean_eyebrow)
     mean_high_width = sum(mean_high_width) / len(mean_high_width)
@@ -26,17 +31,13 @@ def calculate_mean(user_id):
     db.session.commit()
 
 
-FRAME_LEVELS = {2: 1, 3: 4, 4: 4, 5: 3, 6: 2}
-SMILE_LEVELS = {0: 0, 1: 0, 2: 1, 3: 1, 4: 2, 5: 2, 6: 3, 7: 3}
-
-
 def calculate_status(user_id):
-    data = UserModel.query.filter_by(user_id=user_id).order_by(UserModel.id.desc()).limit(30)
+    data = DataModel.query.filter_by(user_id=user_id).order_by(DataModel.id.desc()).limit(30)
 
-    eyebrow = [n.__dict__["eyebrow"] for n in data if n.__dict__["eyebrow"] is not None]
-    high_width = [n.__dict__["high_width"] for n in data if n.__dict__["high_width"] is not None]
-    eye_track = [n.__dict__["eye_track"] for n in data if n.__dict__["eye_track"] is not None]
-    back_move = [n.__dict__["back_move"] for n in data if n.__dict__["back_move"] is not None]
+    eyebrow = [n.__dict__["eyebrow"] for n in data]
+    high_width = [n.__dict__["high_width"] for n in data]
+    eye_track = [n.__dict__["eye_track"] for n in data]
+    back_move = [n.__dict__["back_move"] for n in data]
 
     eyebrow = sum(eyebrow) / len(eyebrow)
     high_width = sum(high_width) / len(high_width)
@@ -48,12 +49,13 @@ def calculate_status(user_id):
 
     eyebrow_ration = eyebrow / user.mean_eyebrow
     high_width = high_width / user.mean_high_width
-
-    eye_score = 3 if eyebrow_ration > 1.04 else 1 if eyebrow_ration < 0.96 else 2
-    high_score = 1 if high_width > 1.04 else 3 if high_width < 0.96 else 2
+    eye_score = 1 if eyebrow_ration > 1.09 else 3 if eyebrow_ration < 1.00 else 2
+    high_score = 3 if high_width > 0.92 else 0 if high_width < 0.9 else 2
 
     status = eye_score + high_score
-    focus = user.focus + user.focus * (status + back_move_status + eye_track - 5) * 2 / 100
+    focus = user.focus + user.focus * (FOCUS_LEVELS[int(round(status + back_move_status + eye_track))]) / 100
+    focus = min(focus, 100)
+    focus = max(focus, 0)
 
     user.focus = focus
     db.session.commit()
@@ -62,11 +64,11 @@ def calculate_status(user_id):
 
 
 def calculate_smile(user_id):
-    data = UserModel.query.filter_by(user_id=user_id).order_by(UserModel.id.desc()).limit(30)
+    data = DataModel.query.filter_by(user_id=user_id).order_by(DataModel.id.desc()).limit(30)
 
-    d = [n.__dict__["d"] for n in data if n.__dict__["d"] is not None]
-    a1 = [n.__dict__["a1"] for n in data if n.__dict__["a1"] is not None]
-    a2 = [n.__dict__["a2"] for n in data if n.__dict__["a2"] is not None]
+    d = [n.__dict__["d"] for n in data]
+    a1 = [n.__dict__["a1"] for n in data]
+    a2 = [n.__dict__["a2"] for n in data]
 
     d = sum(d) / len(d)
     a1 = sum(a1) / len(a1)
@@ -78,20 +80,22 @@ def calculate_smile(user_id):
     a1 = a1 / user.mean_a1
     a2 = a2 / user.mean_a2
 
-    status_d = 0 if d <= 1 else 1 if d < 1.2 else 3 if d < 1.35 else 3
-    status_a1 = 2 if a1 > 1.15 else 1 if a1 > 1 else 0
-    status_a2 = 2 if a2 > 1.15 else 1 if a2 > 1 else 0
+    status_d = 0 if d <= 0.9 else 1 if d < 1.1 else 2 if d < 1.35 else 3
+    status_a1 = 2 if a1 < 0.85 else 1 if a1 < 1 else 0
+    status_a2 = 2 if a2 < 0.85 else 1 if a2 < 1 else 0
 
     return SMILE_LEVELS[status_d + status_a1 + status_a2]
 
 
 def calculate_data(user_id):
     user = UserModel.query.filter_by(user_id=user_id).first()
-    if user.mean_eyebrow is None and user.count < 120:
-        return {"idx": user, "focused": 50, "status": 3, "smile": 1}
-    elif user.mean_eyebrow is None and user.count >= 120:
+
+    time_interval = 120
+    if user.mean_eyebrow is None and user.count < time_interval:
+        return {"idx": user_id, "focused": 50, "status": 3, "smile": 1}
+    elif user.mean_eyebrow is None and user.count >= time_interval:
         calculate_mean(user_id)
-        return {"idx": user, "focused": 50, "status": 3, "smile": 1}
+        return {"idx": user_id, "focused": 50, "status": 3, "smile": 1}
     status, focus = calculate_status(user_id)
     smile = calculate_smile(user_id)
     return {"idx": user_id, "status": status, "focus": focus, "smile": smile}

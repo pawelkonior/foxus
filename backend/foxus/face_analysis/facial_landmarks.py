@@ -1,3 +1,4 @@
+import json
 from collections import OrderedDict
 
 from imutils import face_utils
@@ -7,8 +8,7 @@ import dlib
 import cv2
 
 from foxus.face_analysis.eye_tracking import track_eye
-from foxus.database import UserModel
-from foxus import db
+from foxus.database import UserModel, add_user
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
@@ -18,7 +18,9 @@ predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
 zeros_landmarks = np.zeros((68, 2), dtype=int)
 
-response_dict = {"track": None, "back_video": None, "eyebrow": None, "high-wid": None, "d1": None, "a1": None, "a2": None}
+frame = []
+
+inactive_dict = {"track": 0, "back_video": 1, "eyebrow": 0, "high-wid": 0, "d1": 0, "a1": 0, "a2": 0}
 
 FACIAL_LANDMARKS_68_IDXS = OrderedDict([
     ("mouth", (48, 68)),
@@ -38,7 +40,7 @@ def json_face(landmarks):
         (j, k) = FACIAL_LANDMARKS_68_IDXS[name]
         a = landmarks[j:k]
         response[name] = a.tolist()
-    return response
+    return json.dumps(response)
 
 
 def calculate_angle(a, b, c):
@@ -61,47 +63,45 @@ def calculating_data(shape):
 
 def detect_face(user, image):
     try:
-        image = imutils.resize(image, width=340)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     except cv2.error:
-        return json_face(zeros_landmarks), response_dict
+        return json_face(zeros_landmarks), inactive_dict
 
     user = UserModel.query.filter_by(user_id=user).first()
-
-    response_dict["back_video"] = 0
-
-    frame = user.frame_move
-
+    if user is None:
+        add_user()
+    else:
+        user.count = (user.count + 1) % 180
     chang_frame = imutils.resize(gray, width=100)
+    response_dict = inactive_dict
     if not frame:
         frame.append(chang_frame)
-        delta_frame = chang_frame
     else:
+
         delta_frame = cv2.absdiff(frame[0], chang_frame)
-        user.frame_move = chang_frame
-        db.session.commit()
+        frame[0] = chang_frame
 
-    _, thresh = cv2.threshold(delta_frame, 25, 255, cv2.THRESH_BINARY)
-    thresh = cv2.dilate(thresh, None, iterations=2)
+        _, thresh = cv2.threshold(delta_frame, 25, 255, cv2.THRESH_BINARY)
+        thresh = cv2.dilate(thresh, None, iterations=2)
 
-    contours = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    contours = imutils.grab_contours(contours)
+        contours = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours = imutils.grab_contours(contours)
 
-    for contour in contours:
-        if cv2.contourArea(contour) > 30:
-            response_dict["back_video"] = 2
-            continue
+        for contour in contours:
+            if cv2.contourArea(contour) > 30:
+                response_dict["back_video"] = 1
+                continue
 
     rects = detector(gray, 1)
 
     if len(rects) > 1:
-        response_dict["back_video"] = 1
+        response_dict["back_video"] = 2
 
     for (i, rect) in enumerate(rects):
         shape = predictor(gray, rect)
         shape = face_utils.shape_to_np(shape)
-
         if len(shape) == 68:
+
             left_eye = shape[l_start:l_end]
             right_eye = shape[r_start:r_end]
             eyes = [left_eye, right_eye]
@@ -113,7 +113,5 @@ def detect_face(user, image):
             response_dict["a1"] = a1
             response_dict["a2"] = a2
             return json_face(shape), response_dict
-        else:
-            response_dict["track"] = 0
 
-    return json_face(zeros_landmarks), response_dict
+    return json_face(zeros_landmarks), inactive_dict

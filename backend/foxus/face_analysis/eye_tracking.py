@@ -17,7 +17,7 @@ import cv2
 
 
 def track_eye(eyes, image):
-    eye_state = []
+    eye_state = [0]
     for index, eye in enumerate(eyes):
         left_edge = eye[0]
         right_edge = eye[3]
@@ -54,19 +54,9 @@ def track_eye(eyes, image):
             pupil_found = True if len(contours) == 1 else False
 
             if pupil_found:
-                M = cv2.moments(contours[0])
-                cx = int(M['m10'] / M['m00']) if M['m00'] != 0 else 0
-                width_ratio = cx / eye_width
-
-                if width_ratio < 0.35:
-                    eye_state.append(4)
-                elif width_ratio > 0.65:
-                    eye_state.append(3)
-                else:
-                    eye_state.append(5)
+                eye_state.append(2)
             else:
                 eye_state.append(1)
         else:
-            eye_state.append(2)
-    eye_state = max(eye_state)
-    return 0 if eye_state == 1 else 2 if eye_state == 5 else 1
+            eye_state.append(1)
+    return max(eye_state)

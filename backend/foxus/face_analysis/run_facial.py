@@ -10,9 +10,8 @@ from foxus import db
 def render_face(user, img):
     encoded_image = img.split(",")[1]
     img = base64.b64decode(encoded_image)
-    image = np.frombuffer(img, dtype="uint8")
-    img = cv2.imdecode(image, cv2.IMREAD_COLOR)[1]
-
+    image = np.asarray(bytearray(img), dtype="uint8")
+    img = cv2.imdecode(image, cv2.IMREAD_COLOR)
     landmark, database_data = detect_face(user, img)
 
     data_entry = DataModel(
