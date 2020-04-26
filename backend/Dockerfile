@@ -21,6 +21,6 @@ RUN pip install -r requirements.txt
 COPY . /usr/src/app/
 
 
-EXPOSE 3008/tcp
+EXPOSE 80/tcp
 
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
