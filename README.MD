@@ -3,6 +3,7 @@
     <img src="images/image.png" alt="Logo" width="800" height="300">
   </a>
 </p>
+
 ## Inspiration
 E-learning granted European and non-European students access to unprecedented learning opportunities. The global COVID-19 pandemic, however, turned e-learning from an opportunity to an urgent necessity. Advanced e-learning tools are therefore in high demand and are likely to remain so.
  
