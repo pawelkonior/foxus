@@ -1,4 +1,4 @@
-from foxus import db
+#from foxus import db
 
 
 class DataModel(db.Model):
@@ -30,18 +30,7 @@ class UserModel(db.Model):
     focus = db.Column(db.Integer)
 
 
-def uuid(idx):
-    def inner(new_id=None):
-        nonlocal idx
-        idx += 1
-        return idx if new_id is None else new_id
-    return inner
-
-
-uid = uuid(0)
-
-
-def add_user():
-    user = UserModel(user_id=uid(), name="Pawel", focus=60)
+def add_user(idx):
+    user = UserModel(user_id=idx, name="user_1", focus=60)
     db.session.add(user)
     db.session.commit()

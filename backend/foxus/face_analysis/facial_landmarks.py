@@ -1,3 +1,4 @@
+import base64
 import json
 from collections import OrderedDict
 
@@ -8,7 +9,7 @@ import dlib
 import cv2
 
 from foxus.face_analysis.eye_tracking import track_eye
-from foxus.database import UserModel, add_user
+# from foxus.database import UserModel, add_user
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
@@ -60,18 +61,54 @@ def calculating_data(shape):
     angle_2 = calculate_angle(shape[35], shape[54], shape[48])
     return dist_3 / dist_1, dist_2 / dist_1, d_smile, angle_1, angle_2
 
+def show_edges(img, x, y, w, color):
+    cv2.line(img, (x, y), (x, y + int(0.3 * w)), color, 1)
+    cv2.line(img, (x, y), (x + int(0.3 * w), y), color, 1)
 
-def detect_face(user, image):
+    cv2.line(img, (x, y + w), (x, y + int(0.7 * w)), color, 1)
+    cv2.line(img, (x, y + w), (x + int(0.3 * w), y + w), color, 1)
+
+    cv2.line(img, (x + w, y), (x + int(0.7 * w), y), color, 1)
+    cv2.line(img, (x + w, y), (x + w, y + int(0.3 * w)), color, 1)
+
+    cv2.line(img, (x + w, y + w), (x + w, y + int(0.7 * w)), color, 1)
+    cv2.line(img, (x + w, y + w), (x + int(0.7 * w), y + w), color, 1)
+
+
+def print_line(roi_color, point_1, point_2):
+    cv2.line(roi_color, (point_1[0], point_1[1]), (point_2[0], point_2[1]), (20, 255, 57), 1)
+
+def print_schema(points, roi_color):
+    print_line(roi_color, points[42], points[45])
+    print_line(roi_color, points[43], points[47])
+    print_line(roi_color, points[48], points[31])
+    print_line(roi_color, points[54], points[35])
+    print_line(roi_color, points[54], points[57])
+    print_line(roi_color, points[57], points[48])
+    print_line(roi_color, points[48], points[50])
+    print_line(roi_color, points[50], points[51])
+
+    print_line(roi_color, points[51], points[52])
+    print_line(roi_color, points[52], points[54])
+
+
+def detect_face(user_id, image):
+
     try:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     except cv2.error:
-        return json_face(zeros_landmarks), inactive_dict
+        a, g = cv2.imencode('.jpeg', image)
+        a = g.tobytes()
+        a = base64.b64encode(a)
+        a = 'data:image/jpeg;base64,' + a.decode()
+        return a, inactive_dict
 
-    user = UserModel.query.filter_by(user_id=user).first()
-    if user is None:
-        add_user()
-    else:
-        user.count = (user.count + 1) % 180
+    # user = UserModel.query.filter_by(user_id=user_id).first()
+    # if user is None:
+    #     add_user(user_id)
+
+    # else:
+    #     user.count = (user.count + 1) % 180
     chang_frame = imutils.resize(gray, width=100)
     response_dict = inactive_dict
     if not frame:
@@ -94,14 +131,20 @@ def detect_face(user, image):
 
     rects = detector(gray, 0)
 
+
+
     if len(rects) > 1:
         response_dict["back_video"] = 2
 
     for (i, rect) in enumerate(rects):
         shape = predictor(gray, rect)
         shape = face_utils.shape_to_np(shape)
+        (x, y, w, h) = face_utils.rect_to_bb(rect)
+        show_edges(image, x, y, w, (20, 255, 57))
         if len(shape) == 68:
-
+            for (x, y) in shape:
+                cv2.circle(image, (x, y), 1, (20, 255, 57), -1)
+            #print_schema(shape, image)
             left_eye = shape[l_start:l_end]
             right_eye = shape[r_start:r_end]
             eyes = [left_eye, right_eye]
@@ -112,6 +155,15 @@ def detect_face(user, image):
             response_dict["d1"] = d1
             response_dict["a1"] = a1
             response_dict["a2"] = a2
-            return json_face(shape), response_dict
 
-    return json_face(zeros_landmarks), inactive_dict
+            a, g = cv2.imencode('.jpeg', image)
+            a = g.tobytes()
+            a = base64.b64encode(a)
+            a = 'data:image/jpeg;base64,' + a.decode()
+            return a, response_dict
+
+    a, g = cv2.imencode('.jpeg', image)
+    a = g.tobytes()
+    a = base64.b64encode(a)
+    a = 'data:image/jpeg;base64,' + a.decode()
+    return a, inactive_dict

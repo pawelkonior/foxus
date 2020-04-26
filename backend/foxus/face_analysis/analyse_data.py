@@ -1,5 +1,5 @@
-from foxus.database import UserModel, DataModel
-from foxus import db
+#from foxus.database import UserModel, DataModel
+#from foxus import db
 
 
 FRAME_LEVELS = {1: 1, 2: 1, 3: 4, 4: 3, 5: 3, 6: 2}
@@ -60,12 +60,6 @@ def calculate_status(user_id):
     user.focus = focus
     db.session.commit()
 
-    return FRAME_LEVELS[status], focus
-
-
-def calculate_smile(user_id):
-    data = DataModel.query.filter_by(user_id=user_id).order_by(DataModel.id.desc()).limit(30)
-
     d = [n.__dict__["d"] for n in data]
     a1 = [n.__dict__["a1"] for n in data]
     a2 = [n.__dict__["a2"] for n in data]
@@ -74,7 +68,6 @@ def calculate_smile(user_id):
     a1 = sum(a1) / len(a1)
     a2 = sum(a2) / len(a2)
 
-    user = UserModel.query.filter_by(user_id=user_id).first()
 
     d = d / user.mean_d
     a1 = a1 / user.mean_a1
@@ -84,7 +77,7 @@ def calculate_smile(user_id):
     status_a1 = 2 if a1 < 0.85 else 1 if a1 < 1 else 0
     status_a2 = 2 if a2 < 0.85 else 1 if a2 < 1 else 0
 
-    return SMILE_LEVELS[status_d + status_a1 + status_a2]
+    return FRAME_LEVELS[status], focus, SMILE_LEVELS[status_d + status_a1 + status_a2]
 
 
 def calculate_data(user_id):
@@ -96,6 +89,6 @@ def calculate_data(user_id):
     elif user.mean_eyebrow is None and user.count >= time_interval:
         calculate_mean(user_id)
         return {"idx": user_id, "focused": 50, "status": 3, "smile": 1}
-    status, focus = calculate_status(user_id)
-    smile = calculate_smile(user_id)
+
+    status, focus, smile = calculate_status(user_id)
     return {"idx": user_id, "status": status, "focus": focus, "smile": smile}
