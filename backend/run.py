@@ -1,6 +1,6 @@
-from foqs import app
+from foxus import app, socketio
 from logs.logs import log_constructor
 log_constructor()
 
 if __name__ == "__main__":
-    app.run(debug=True, port=4000)
+    socketio.run(app, debug=True, port=3008)
