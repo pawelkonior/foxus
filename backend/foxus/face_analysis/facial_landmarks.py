@@ -61,6 +61,7 @@ def calculating_data(shape):
     angle_2 = calculate_angle(shape[35], shape[54], shape[48])
     return dist_3 / dist_1, dist_2 / dist_1, d_smile, angle_1, angle_2
 
+
 def show_edges(img, x, y, w, color):
     cv2.line(img, (x, y), (x, y + int(0.3 * w)), color, 1)
     cv2.line(img, (x, y), (x + int(0.3 * w), y), color, 1)
@@ -77,6 +78,7 @@ def show_edges(img, x, y, w, color):
 
 def print_line(roi_color, point_1, point_2):
     cv2.line(roi_color, (point_1[0], point_1[1]), (point_2[0], point_2[1]), (20, 255, 57), 1)
+
 
 def print_schema(points, roi_color):
     print_line(roi_color, points[42], points[45])
