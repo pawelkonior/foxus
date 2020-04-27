@@ -41,6 +41,7 @@ def data_generator():
 @socketio.on('stream')
 def handle_stream(message):
     new_frame = render_face(1, message['stream'])
-    # emit('stream processed', {"stream": message['stream'], "points": new_frame})
+
     emit('stream processed', message['stream'])
+    # socketio.sleep(1)
     # socketio.sleep(1)
