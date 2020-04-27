@@ -60,11 +60,12 @@ How to manage tight schedules in order to include power naps ;)
 
 ![Foxus](https://drive.google.com/uc?export=view&id=1wzxHMjhFKo76Oj1PUWjm-ogehZTu8OQ-)
 ## What's next for our project
-- clinical tests in order to optimize our model's parameters with the assistance of **Department of Neurobiology @ Jagiellonian University, Kraków, Poland**.
+- clinical tests in order to optimize our model's parameters with the assistance of **Department of Neurobiology at Jagiellonian University, Kraków, Poland**.
 - optimizing overall performance
 - implementation of **additional tracking functionalities** like **background disruption, voice analysis**
 - SaaS in order for **Foxus** to work with all of the most popular video communicators on the market:
 
 ![Slack](https://drive.google.com/uc?export=view&id=1-W1jbpBTE65gfCyT4MEOIlNgwt0UxXyk) ![Google Hangouts](https://drive.google.com/uc?export=view&id=1vQ_jS-NTnKgSvw39XVz7tdnBxaag84SQ) ![Discord](https://drive.google.com/uc?export=view&id=1Js38zgbTEnMUm6xmBEidt5Gn9Dg1kYr2) ![Webex](https://drive.google.com/uc?export=view&id=19N5b90HalfthB4TAmVd3dGKLTcb1NAmN) ![Skype](https://drive.google.com/uc?export=view&id=1BwB1Xkk1R0ZCSsY1lKOs6mfcG34SnAsz) ![Zoom](https://drive.google.com/uc?export=view&id=1dV5wHma9ISijYxnFHNn8Cryl3QRgCSLv)
 - introduction of the software as not only education, but also business-oriented solution (team meetings, internal trainings)
+
 ![Foxus](https://drive.google.com/uc?export=view&id=1wzxHMjhFKo76Oj1PUWjm-ogehZTu8OQ-)
