@@ -18,30 +18,30 @@ def index():
 
 thread = Thread()
 thread_stop_event = Event()
+send_data = 1
 
-
-@socketio.on('connect')
-def chart_data_connect():
-    global thread
-    print('Client connected')
-    emit('connected')
-    # if not thread.is_alive():
-    #     print("Starting Thread")
-    #     thread = socketio.start_background_task(data_generator)
-
-
-def data_generator():
-    while not thread_stop_event.isSet():
-        data = calculate_data(1)
-        socketio.emit('connected')
-        socketio.emit('user processed', data)
-        socketio.sleep(1)
+# @socketio.on('connect')
+# def chart_data_connect():
+#     global thread
+#     print('Client connected')
+#     emit('connected')
+#     if not thread.is_alive():
+#          print("Starting Thread")
+#          thread = socketio.start_background_task(data_generator)
+#
+#
+# def data_generator():
+#     while not thread_stop_event.isSet():
+#         data = calculate_data(1)
+#         socketio.emit('connected')
+#         socketio.emit('user processed', data)
+#         socketio.sleep(2)
 
 
 @socketio.on('stream')
 def handle_stream(message):
     new_frame = render_face(1, message['stream'])
 
-    emit('stream processed', message['stream'])
-    # socketio.sleep(1)
-    # socketio.sleep(1)
+    emit('stream processed', new_frame)
+    socketio.sleep(300)
+
