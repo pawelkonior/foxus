@@ -9,7 +9,7 @@ dlib==19.19.0
 Flask-SocketIO==4.3.0
 Flask-SQLAlchemy==2.4.1
 imutils==0.5.3
-numpy==1.18.3
+numpy==1.22.0
 opencv-contrib-python==4.2.0.32
 python-engineio==3.12.1
 python-socketio==4.5.1
